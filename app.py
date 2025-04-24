@@ -20,6 +20,11 @@ logging.basicConfig(
     filename='/home/ubuntu/lotofacil/logs/app.log',
     filemode='a'
 )
+logging.basicConfig(
+    filename='logs/app.log',
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
 logger = logging.getLogger('app')
 
 # Inicializar Flask
@@ -33,6 +38,7 @@ from auth_middleware import token_required, premium_required, html_token_require
 
 # Criar diretórios necessários
 os.makedirs('/home/ubuntu/lotofacil/logs', exist_ok=True)
+os.makedirs("logs", exist_ok=True)
 
 @app.route('/')
 def index():
