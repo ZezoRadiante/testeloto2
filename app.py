@@ -23,4 +23,3 @@ def index():
 
 if __name__ == "__main__":
     app.run(debug=True)
-git config --global user.name "Seu Nome"
