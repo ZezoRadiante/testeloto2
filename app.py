@@ -3,7 +3,10 @@ import os
 import logging
 
 # Garantir que o diretório de logs exista
-os.makedirs("logs", exist_ok=True)
+if os.path.isfile("logs"):
+    os.remove("logs")  # Deleta o arquivo com nome "logs"
+
+os.makedirs("logs", exist_ok=True)  # Agora sim, cria a pasta
 
 # Configurar logging para arquivo relativo
 logging.basicConfig(
